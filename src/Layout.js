@@ -7,9 +7,11 @@ import Footer from "./Footer/footer";
 export default function Layout() {
     return (
         <>
+        <div className="bg-indigo-200">
         <Header />
         <Outlet />
         <Footer />
+        </div>
         </>
     )
 }

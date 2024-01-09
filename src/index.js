@@ -9,6 +9,11 @@ import Home from './Home/home';
 import About from './About/about';
 import Contact from './Contact/contact';
 import User from './User/user';
+import { Provider } from 'react-redux';
+import store from './app/store';
+import Cryptocurrencies from './Cryptocurrency/Cryptocurrencies';
+import CryptoDetails from './Cryptocurrency/CryptoDetails';
+import News from './News/News';
 
 // const router= createBrowserRouter([
 //   {
@@ -37,7 +42,10 @@ const router =createBrowserRouter(
     <Route path='/' element={<Layout/>}>
       <Route path='' element={<Home/>}/>
       <Route path='about' element={<About/>}/>
+      <Route path='cryptocurrencies' element={<Cryptocurrencies/>}/>
+      <Route path='crypto/:coinId' element={<CryptoDetails/>}/>
       <Route path='contact' element={<Contact/>} />
+      <Route path='news' element={<News/>}/>
       <Route path='user/:userid' element={<User/>}/>
     </Route>
   )
@@ -46,7 +54,9 @@ const router =createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
