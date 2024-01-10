@@ -21,7 +21,7 @@ export default function Home() {
 
     return (
         <>
-            <Title level={2} className="heading">Global Crypto Stats</Title>
+            <Title level={2} className="heading">Crypto Statistics</Title>
             <Row gutter={[32, 32]}>
                 <Col span={12}><Statistic title="Total Cryptocurrencies" value={globalStats.total} /></Col>
                 <Col span={12}><Statistic title="Total Exchanges" value={millify(globalStats.totalExchanges)} /></Col>
@@ -35,11 +35,11 @@ export default function Home() {
                 <Title level={3} className="show-more"><Link to="/cryptocurrencies">Show more</Link></Title>
             </div>
             <Cryptocurrencies simplified />
-            <div className="home-heading-container">
+            {/* <div className="home-heading-container">
                 <Title level={2} className="home-title">Latest Crypto News</Title>
                 <Title level={3}><Link to="/news">Show more</Link></Title>
             </div>
-            <News simplified />
+            <News simplified /> */}
         </>
     );
 }
